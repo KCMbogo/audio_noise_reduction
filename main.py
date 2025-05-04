@@ -2,7 +2,7 @@ import noisereduce as nr
 import librosa
 import soundfile as sf
 
-def noise_reduction(audio_path, save_cleaned_audio_path):
+def noise_reduction(audio_path: str, save_cleaned_audio_path: str):
     """Reduce background noise from audio
     
     Description:
@@ -29,3 +29,6 @@ def noise_reduction(audio_path, save_cleaned_audio_path):
 
     # Save output
     sf.write(save_cleaned_audio_path, reduced_noise, sr)
+
+if __name__ == "__main__":
+    noise_reduction(audio_path="noisy_audio/example.mp3", save_cleaned_audio_path="cleaned/example_cleaned.mp3")
